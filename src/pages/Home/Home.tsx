@@ -1,28 +1,26 @@
 import styles from './Home.module.scss'
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+
+  const { t } = useTranslation();
 
   return (
    <div className={styles.wrapper}>
       <h1 className="{styles.title}">
-        Rock Paper Scissors
+        {t('rps')}
       </h1>
       <span>
-        This is simple Rock-Paper-Scissors game. You play against computer. This application
-        is built using React for frontend and Node.js with Express.js for backend.
-        Result history is saved in MySQL database.
+        {t('about')}
       </span>
       <span className={styles.game_rules}>
-        <b>Game rules:</b><br />
-        A classic two-person game. Players start each round by saying,
-        “rock, paper, scissors, shoot!” On “shoot,” each player holds out their fist
-        for rock, flat hand for paper, or their index and middle finger for scissors.
-        Rock crushes scissors, scissors cut paper, and paper covers rock. See who wins each round!
+        <b>{t("rulesTitle")}</b><br />
+        {t("rules")}
       </span>
       <div className={styles.button_container}>
         <button className={styles.button}>
-          <NavLink to='game'>Start game</NavLink>
+          <NavLink to='game'>{t('startGame')}</NavLink>
         </button>
       </div>
     </div>
