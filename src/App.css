@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(29, 29, 31);
+}
+
+nav {
+  display: flex;
+  font-size: 3rem;
+  gap: 20px;
+}
+
+nav > a {
+  padding: 0 50px;
+  border-radius: 5px;
+}
+
+nav > a:hover {
+  transition: 0.5s;
+  background-color: rgba(65, 65, 66, 0.329);
+}
+
+.active {
+  box-shadow: 5px 10px 20px rgba(196, 194, 194, 0.35) inset;
+  border-radius: 10px;
+}
+
+nav > a:last-child {
+  color: green;
+}
