@@ -12,7 +12,7 @@ function Scores() {
   const { t } = useTranslation();
   const queryClient = useQueryClient()
 
-  const { isLoading: singleScoresLoading, data: singleScoreData } = useQuery({
+  const { isError: singleScoresError, isLoading: singleScoresLoading, data: singleScoreData } = useQuery({
     queryKey: ["singleScore"],
     queryFn: () =>
     axios.get('http://localhost:3004/single_score')
@@ -21,7 +21,7 @@ function Scores() {
     })
   })
 
-  const { isLoading: sessionScoresLoading, data: sessionScoreData } = useQuery({
+  const { isError: sessionScoresError, isLoading: sessionScoresLoading, data: sessionScoreData } = useQuery({
     queryKey: ["sessionScore"],
     queryFn: () =>
     axios.get('http://localhost:3004/session_score')
@@ -31,8 +31,14 @@ function Scores() {
   })
 
   if (singleScoresLoading || sessionScoresLoading) {
-    return <div className={styles.row}>
+    return <div className={styles.info}>
              <h2>Loading...</h2>
+           </div>
+  }
+
+  if (singleScoresError || sessionScoresError) {
+    return <div className={styles.info}>
+             <h2>Error loading data!</h2>
            </div>
   }
 
