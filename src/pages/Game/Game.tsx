@@ -112,7 +112,6 @@ function Game() {
       setResults({...results, games: results.games + 1})
     }
 
-    console.log(results.games)
     gamesRef.current ?  gamesRef.current++ : gamesRef.current = 1;
     saveSingleScore(win, computerWep, playerWep)
   }
