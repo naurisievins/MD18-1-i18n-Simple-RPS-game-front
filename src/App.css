@@ -1,5 +1,6 @@
 header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   background-color: rgb(29, 29, 31);
@@ -9,6 +10,7 @@ nav {
   display: flex;
   font-size: 3rem;
   gap: 20px;
+  padding: 5px;
 }
 
 nav > a {
@@ -28,4 +30,44 @@ nav > a:hover {
 
 nav > a:nth-child(2) {
   color: green;
+}
+
+.lang_select {
+  font-size: 1rem;
+  border-radius: 10px;
+  height: 50%;
+  align-self: center;
+  margin-left: auto;
+  background-color: rgb(29, 29, 31);
+  color: rgb(197, 196, 195);
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------------------------Media */
+
+@media (max-width: 768px) {
+  nav {
+    font-size: 1.5rem;
+    gap: 10px;
+  }
+
+  nav > a {
+    padding: 0 20px;
+  }
+
+  .lang_select {
+    height: 80%;
+  }
+
+  h2, h3, h4 {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
 }

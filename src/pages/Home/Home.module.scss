@@ -8,6 +8,7 @@
   color:rgb(26, 25, 25);
   gap: 20px;
   height: 90vh;
+  min-height: 90vh;
   background-color: rgb(198 203 201);
   border-radius: 2px 2px 10px 10px;
   box-shadow: 12px 0 15px -4px rgba(139, 139, 138, 0.8), -12px 0 8px -4px rgba(139, 139, 138, 0.8);
@@ -28,5 +29,22 @@
   &:hover{
     opacity: 0.8;
     transition: 0.5s;
+  }
+}
+
+// -------------------------------------Media
+
+@media (max-width: 1400px) {
+  .wrapper {
+    width: 70%
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    margin: 0;
   }
 }
